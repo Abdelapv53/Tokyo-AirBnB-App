@@ -16,24 +16,12 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Tokyo AirBnB Price Estimator
+            ### Tokyo AirBnB Price Estimator
 
             The First step of that one week escape! Let's Calculate your options.
             """
         ),
         dcc.Link(dbc.Button('Calculate', color='primary'), href='/predictions')
     ],
-    md=4,
-)
-
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
-
-column2 = dbc.Col(
-    [
-        dcc.Graph(figure=fig),
-    ]
-)
-
-layout = dbc.Row([column1, column2])
+    md=0,)
+layout = dbc.Row([column1])
